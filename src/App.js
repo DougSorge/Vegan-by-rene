@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
+import Hero from "./Components/Hero/Hero";
+import About from "./Components/About/About";
+
+import NavBar from "./Components/NavMenu/Desktop/NavBar";
+import NavMenuBtn from "./Components/NavMenu/Mobile/NavMenuBtn";
 
 function App() {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth > 600) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  }, []);
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 600) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(true);
+    }
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {isMobile ? <NavMenuBtn /> : <NavBar />}
+      <Hero />
+      <About />
+    </Router>
   );
 }
 

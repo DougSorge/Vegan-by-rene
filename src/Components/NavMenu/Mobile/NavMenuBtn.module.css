@@ -1,0 +1,89 @@
+.navMenuBtnContainer {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  justify-content: center;
+}
+
+.menuBtn {
+  height: 4rem;
+  width: 4rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.navigationIcon {
+  background-color: var(--color-green-dark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2px;
+  width: 80%;
+}
+
+.navigationIcon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1rem;
+  background-color: var(--color-green-dark);
+  left: 6px;
+  width: 60%;
+  height: 100%;
+  transition: all 0.04s;
+}
+
+.navigationIcon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1rem;
+  background-color: var(--color-green-dark);
+  left: 6px;
+  width: 60%;
+  height: 100%;
+  transition: all 0.04s;
+}
+
+.navMenuCheckBox {
+  display: none !important;
+}
+
+.navMenuCheckBox:checked + .menuBtn .navigationIcon {
+  background-color: transparent;
+}
+
+.navMenuCheckBox:checked + .menuBtn .navigationIcon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.navMenuCheckBox:checked + .menuBtn .navigationIcon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.navBackground {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: linear-gradient(rgba(231, 123, 45, 0.9), rgba(12, 148, 231, 0.9));
+  height: 2rem;
+  width: 2rem;
+  z-index: -5;
+  transition: all 0.3s;
+}
+
+.navMenuCheckBox:checked ~ .navBackground {
+  transform: translate(-50%, -50%) scale(15);
+}

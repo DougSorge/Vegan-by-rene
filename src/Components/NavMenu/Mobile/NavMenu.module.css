@@ -1,0 +1,77 @@
+.navBar {
+  transition: all 0.3s;
+  transition-delay: 0.03s;
+}
+
+.navClosed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navList {
+  list-style: none;
+}
+
+.navListItem {
+  font-size: 2rem;
+
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  letter-spacing: 1.2px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.navListItem a {
+  text-decoration: none;
+  color: white;
+}
+
+.linkOne {
+  top: -1rem;
+  left: 7rem;
+}
+
+.linkOne:hover {
+  transform: scale(1.2);
+}
+
+.linkTwo {
+  top: 3rem;
+  left: 6.2rem;
+  transform: rotate(25deg);
+}
+
+.linkTwo:hover {
+  transform: scale(1.2) rotate(25deg);
+}
+
+.linkThree {
+  top: 6rem;
+  left: 3.8rem;
+  transform: rotate(45deg);
+}
+
+.linkThree:hover {
+  transform: scale(1.2) rotate(45deg);
+}
+
+.linkFour {
+  top: 7.4rem;
+  left: 1.2rem;
+  transform: rotate(65deg);
+}
+
+.linkFour:hover {
+  transform: scale(1.2) rotate(65deg);
+}
+
+.linkFive {
+  top: 10rem;
+  left: -4.2rem;
+  transform: rotate(90deg);
+}
+
+.linkFive:hover {
+  transform: scale(1.2) rotate(90deg);
+}
